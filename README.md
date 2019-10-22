@@ -1,6 +1,10 @@
 ## What can it do?
 
-_protractor-css-booster_ is lightweight plugin to help you to find out web elements by using special selectors using CSS.
+Finding an web element using XPATH is not a right choice to make as it slows down the element finding mechanism. But, due to the lack of CSS support for multiple use cases, still XPATH use to gather some space in your testing world.
+
+Worry not! Here comes Protractor-CSS-Booster! :hatching_chick:
+
+_protractor-css-booster_ is lightweight plugin to help you to find out web elements by using special custom selectors. All the custom locator uses CSS selector as an input to accomplish the task for you.
 
 Now, you can find web elements such as:
 
@@ -148,6 +152,6 @@ you can raise any issue [here](https://github.com/abhinaba1080/protractor-css-bo
 
 Any pull request is welcome keeping proper code structure.
 
-If works for you, dont forget to give a star.
+If works for you, dont forget to give a star. :star2: :star: :star: :star:
 
 _- Copyright &copy; 2019- [Abhinaba Ghosh](https://www.linkedin.com/in/abhinaba-ghosh-9a2ab8a0/)_
