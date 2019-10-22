@@ -1,5 +1,5 @@
 {
-  "name": "protractor-locator-booster",
+  "name": "protractor-css-booster",
   "version": "1.0.4",
   "description": "custom css locators for Protractor",
   "main": "./dist/index.js",
@@ -22,6 +22,7 @@
     "protractor-css-selector",
     "protractor-css-plugin",
     "protractor-custom-locator",
+    "protractor-css-booster",
     "followingSibling,nextSiblingOf,prevSiblingOf",
     "protractor-sibling"
   ],
