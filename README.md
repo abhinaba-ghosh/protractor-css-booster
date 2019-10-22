@@ -77,7 +77,7 @@ This Locator helps to identify the grand parent element of a target element
 You can find the grand parent by:
 
 ```ts
-const gp = element(by.grandParnetOf("a")); // retuns <div id='borr'> <p id="odin"> <a id="thor"> baby thor </a></p></div>
+const gp = element(by.grandParnetOf("a")); // returns <div id='borr'> <p id="odin"> <a id="thor"> baby thor </a></p></div>
 ```
 
 #### find Parent:
@@ -87,7 +87,7 @@ This Locator helps to identify the parent element of a target element
 You can find the parent by:
 
 ```ts
-const gp = element(by.parentOf("#thor")); // retuns  <p id="odin"><a id="thor"> baby thor </a> </p>
+const gp = element(by.parentOf("#thor")); // returns  <p id="odin"><a id="thor"> baby thor </a> </p>
 ```
 
 #### find Next Sibling:
@@ -97,7 +97,7 @@ The nextSiblingOf locator returns the node immediately following the specified n
 You can find the next sibling by:
 
 ```ts
-const gp = element(by.nextSiblingOf("Name")); // retuns <Age>Million Years</Age>
+const gp = element(by.nextSiblingOf("Name")); // returns <Age>Million Years</Age>
 ```
 
 #### find Previous Sibling:
@@ -107,7 +107,7 @@ The prevSiblingOf locator returns the previous element of the specified element,
 You can find the previous sibling by:
 
 ```ts
-const gp = element(by.prevSiblingOf("Age")); // retuns <Name>Thor</Name>
+const gp = element(by.prevSiblingOf("Age")); // returns <Name>Thor</Name>
 ```
 
 #### find Following Sibling:
@@ -121,7 +121,7 @@ You can find the following sibling by:
 ```ts
 const gp = element(by.cssContainingText("Name", "Thor")).element(
   by.followingSibling("Age")
-); // retuns <Age>Million Years</Age>
+); // returns <Age>Million Years</Age>
 ```
 
 #### find First Child:
@@ -131,7 +131,7 @@ The firstChildOf locator returns the first child element of the specified elemen
 You can find the first child by:
 
 ```ts
-const gp = element(by.firstChildOf("#schoolBook")); // retuns <Name>Thor</Name>
+const gp = element(by.firstChildOf("#schoolBook")); // returns <Name>Thor</Name>
 ```
 
 #### find Last Child:
