@@ -87,7 +87,7 @@ This Locator helps to identify the parent element of a target element
 You can find the parent by:
 
 ```ts
-const gp = element(by.parnetOf("#thor")); // retuns  <p id="odin"><a id="thor"> baby thor </a> </p>
+const gp = element(by.parentOf("#thor")); // retuns  <p id="odin"><a id="thor"> baby thor </a> </p>
 ```
 
 #### find Next Sibling:
