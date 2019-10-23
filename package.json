@@ -1,8 +1,9 @@
 {
   "name": "protractor-css-booster",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "custom css locators for Protractor",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "compile": "tsc",
     "webdriver-start": "webdriver-manager update --ignore_ssl && webdriver-manager start",

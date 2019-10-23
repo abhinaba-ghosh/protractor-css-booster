@@ -1,7 +1,6 @@
 import { Locator } from "protractor/built/locators";
 
-
-declare module "protractor/built/locators" {
+declare module "protractor" {
   export interface ProtractorBy {
     /**
      *
@@ -118,5 +117,3 @@ declare module "protractor/built/locators" {
     followingSibling(cssSelector: string): Locator;
   }
 }
-
-export * from "protractor";
