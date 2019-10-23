@@ -1,8 +1,7 @@
-import { Locator } from "protractor";
+import { Locator } from "protractor/built/locators";
 
-export declare const onPrepare: () => void;
 
-declare module "protractor" {
+declare module "protractor/built/locators" {
   export interface ProtractorBy {
     /**
      *
@@ -119,3 +118,5 @@ declare module "protractor" {
     followingSibling(cssSelector: string): Locator;
   }
 }
+
+export * from "protractor";
