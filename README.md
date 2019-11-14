@@ -18,6 +18,8 @@ Now, you can find web elements such as:
 
 And, guess what, everything you can find using :collision: **CSS Selectors** :collision:
 
+**_IE Support added from version 1.0.9_**
+
 ## Installation
 
 Install this module locally with the following command to be used as a (dev-)dependency:
