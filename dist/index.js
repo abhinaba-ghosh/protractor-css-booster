@@ -32,6 +32,7 @@ exports.onPrepare = function () {
     protractor_1.protractor.by.addLocator("followingSibling", function (selector, opt_parentElement) {
         var el;
         if (opt_parentElement) {
+            console.log("opt_parentElement:", opt_parentElement);
             el = opt_parentElement.parentElement.querySelectorAll(selector);
         }
         else {
@@ -39,7 +40,7 @@ exports.onPrepare = function () {
         }
         var _elements = [];
         Array.prototype.filter.call(el, function (_el) {
-            if (_el.previousElementSibling === opt_parentElement) {
+            if (_el !== opt_parentElement) {
                 _elements.push(_el);
             }
         });
