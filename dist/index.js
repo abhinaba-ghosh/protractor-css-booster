@@ -74,5 +74,49 @@ exports.onPrepare = function () {
         });
         return _elements;
     });
+    protractor_1.ElementFinder.prototype.grandParent = function () {
+        return protractor_1.browser.driver.executeScript("return arguments[0].parentElement.parentElement;", this.getWebElement());
+    };
+    protractor_1.ElementArrayFinder.prototype.grandParent = function () {
+        return this.filter(function (element) {
+            console.log("i am 1");
+            return protractor_1.browser
+                .executeScript("return arguments[0].parentElement.parentElement;", element)
+                .then(function (value) {
+                console.log("i am 2");
+                return value;
+            });
+        }).first();
+    };
+    protractor_1.ElementFinder.prototype.parent = function () {
+        return protractor_1.browser.executeScript("return arguments[0].parentElement;", this);
+    };
+    protractor_1.ElementArrayFinder.prototype.parent = function () {
+        return this.all(protractor_1.browser.executeScript("return arguments[0].parentElement;", this));
+    };
+    protractor_1.ElementFinder.prototype.nextSibling = function () {
+        return protractor_1.browser.executeScript("return arguments[0].nextElementSibling;", this);
+    };
+    protractor_1.ElementArrayFinder.prototype.nextSibling = function () {
+        return this.all(protractor_1.browser.executeScript("return arguments[0].nextElementSibling;", this));
+    };
+    protractor_1.ElementFinder.prototype.prevSibling = function () {
+        return protractor_1.browser.executeScript("return arguments[0].previousElementSibling;", this);
+    };
+    protractor_1.ElementArrayFinder.prototype.prevSibling = function () {
+        return this.all(protractor_1.browser.executeScript("return arguments[0].previousElementSibling;", this));
+    };
+    protractor_1.ElementFinder.prototype.firstChild = function () {
+        return protractor_1.browser.executeScript("return arguments[0].firstElementChild;", this);
+    };
+    protractor_1.ElementArrayFinder.prototype.firstChild = function () {
+        return this.all(protractor_1.browser.executeScript("return arguments[0].firstElementChild;", this));
+    };
+    protractor_1.ElementFinder.prototype.lastChild = function () {
+        return protractor_1.browser.executeScript("return arguments[0].lastElementChild;", this);
+    };
+    protractor_1.ElementArrayFinder.prototype.lastChild = function () {
+        return this.all(protractor_1.browser.executeScript("return arguments[0].lastElementChild;", this));
+    };
 };
 //# sourceMappingURL=index.js.map

@@ -1,7 +1,5 @@
 node_modules
 *.log
-src
-test
 
 # Build artifacts
 .nyc_output
