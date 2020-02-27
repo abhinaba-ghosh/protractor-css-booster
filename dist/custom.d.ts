@@ -138,6 +138,67 @@ declare module "protractor" {
 
   export interface ElementArrayFinder {
     /**
+     * Returns the list of grand parent element of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element(by.css('.items li')).grandParent();
+     * targetElement.click();
+     */
+    grandParent(): Promise<ElementArrayFinder>;
+
+    /**
+     * Returns the list of parent element of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element(by.css('.items li')).parent();
+     * targetElement..click();
+     *
+     */
+    parent(): Promise<ElementArrayFinder>;
+
+    /**
+     * Returns the list of next sibling / following sibling elements of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element.all(by.css('.items li')).nextSibling();
+     * targetElement.get(1).click();
+     *
+     */
+    nextSibling(): Promise<ElementArrayFinder>;
+
+    /**
+     * Returns the list of previous sibling elements of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element.all(by.css('.items li')).prevSibling();
+     * targetElement.get(1).click();
+     *
+     */
+    prevSibling(): Promise<ElementArrayFinder>;
+
+    /**
+     * Returns the list of firstChild elements of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element.all(by.css('div')).firstChild();
+     * targetElement.get(1).click();
+     *
+     */
+    firstChild(): Promise<ElementArrayFinder>;
+
+    /**
+     * Returns the list of last sibling elements of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element.all(by.css('.items li')).prevSibling();
+     * targetElement.get(1).click();
+     *
+     */
+    lastChild(): Promise<ElementArrayFinder>;
+  }
+
+  export interface ElementFinder {
+    /**
      * Returns the grand parent element of a given element .Promise needs to be resolved
      *
      * @example
@@ -153,10 +214,47 @@ declare module "protractor" {
      * let targetElement = await element(by.css('.items li')).parent();
      * targetElement..click();
      *
-     * @returns {Promise<ElementFinder>}
      */
     parent(): Promise<ElementFinder>;
-  }
 
-  export interface ElementFinder {}
+    /**
+     * Returns the next sibling / following sibling element of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element.all(by.css('.items li')).nextSibling();
+     * targetElement.get(1).click();
+     *
+     */
+    nextSibling(): Promise<ElementFinder>;
+
+    /**
+     * Returns the previous sibling element of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element.all(by.css('.items li')).prevSibling();
+     * targetElement.get(1).click();
+     *
+     */
+    prevSibling(): Promise<ElementFinder>;
+
+    /**
+     * Returns the firstChild element of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element.all(by.css('div')).firstChild();
+     * targetElement.get(1).click();
+     *
+     */
+    firstChild(): Promise<ElementFinder>;
+
+    /**
+     * Returns the last sibling element of a given element .Promise needs to be resolved
+     *
+     * @example
+     * let targetElement = await element.all(by.css('.items li')).prevSibling();
+     * targetElement.get(1).click();
+     *
+     */
+    lastChild(): Promise<ElementFinder>;
+  }
 }

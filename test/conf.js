@@ -2,7 +2,7 @@ exports.config = {
   directConnect: true,
   // seleniumAddress: "http://localhost:4444/wd/hub",
   // specs: ["./archerSpec.js"],
-  specs: ["./spec.js"],
+  specs: ["./*.spec.js"],
   directConnect: true,
   capabilities: {
     browserName: "chrome",
@@ -12,7 +12,7 @@ exports.config = {
 
   plugins: [
     {
-      path: "../dist/index.js"
+      path: "../dist"
     }
   ]
 };

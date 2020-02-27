@@ -51,6 +51,11 @@ exports.config = {
 
 ### Using CSS Booster
 
+**_You can now have the flexibility to use protractor-css-booster in two ways -_**
+**_1. using css selector_**
+**_2. using prototype function (in this case you need to use await / resolve promise by "then")_**
+**_Refer below examples_**
+
 Suppose your HTML
 
 ```HTML
@@ -63,9 +68,9 @@ Suppose your HTML
       </div>
       <div>
         <ul id="schoolBook">
-            <Name>Thor</Name>
-            <Age>Million Years</Age>
-            <Home>Asgard</Home>
+            <li id="name">Thor</li>
+            <li id="age">Million Years</li>
+            <li id="home">Asgard</li>
         </ul>
       </div>
 
@@ -79,7 +84,14 @@ This Locator helps to identify the grand parent element of a target element
 You can find the grand parent by:
 
 ```ts
-const gp = element(by.grandParnetOf("a")); // returns <div id='borr'> <p id="odin"> <a id="thor"> baby thor </a></p></div>
+const target = await element(by.css("#schoolBook")).grandParent(); // returns <div id='borr'> <p id="odin"> <a id="thor"> baby thor </a></p></div>
+target.click(); //proceed with your desired operation
+```
+
+Or you can use as by-locator style,
+
+```ts
+const target = element(by.grandParentOf("#schoolBook")); // returns <div id='borr'> <p id="odin"> <a id="thor"> baby thor </a></p></div>
 ```
 
 #### find Parent:
@@ -89,7 +101,15 @@ This Locator helps to identify the parent element of a target element
 You can find the parent by:
 
 ```ts
-const gp = element(by.parentOf("#thor")); // returns  <p id="odin"><a id="thor"> baby thor </a> </p>
+const target = await element(by.css("#thor")).parent(); // returns <p id="odin"><a id="thor"> baby thor </a> </p>
+target.click(); //proceed with your desired operation
+```
+
+Or you can use as by-locator style,
+
+```ts
+const target = element(by.parentOf("#thor")); // returns  <p id="odin"><a id="thor"> baby thor </a> </p>
+target.click(); //proceed with your desired operation
 ```
 
 #### find Next Sibling:
@@ -99,7 +119,15 @@ The nextSiblingOf locator returns the node immediately following the specified n
 You can find the next sibling by:
 
 ```ts
-const gp = element(by.nextSiblingOf("Name")); // returns <Age>Million Years</Age>
+const target = await element(by.css("#name")).nextSibling(); // returns <li id="age">Million Years</li>
+target.click(); //proceed with your desired operation
+```
+
+Or you can use as by-locator style,
+
+```ts
+const target = element(by.nextSiblingOf("#name")); //  returns <li id="age">Million Years</li>
+target.click(); //proceed with your desired operation
 ```
 
 #### find Previous Sibling:
@@ -109,7 +137,15 @@ The prevSiblingOf locator returns the previous element of the specified element,
 You can find the previous sibling by:
 
 ```ts
-const gp = element(by.prevSiblingOf("Age")); // returns <Name>Thor</Name>
+const target = await element(by.css("#age")).prevSibling(); // returns <li id="name">Thor</li>
+target.click(); //proceed with your desired operation
+```
+
+Or you can use as by-locator style,
+
+```ts
+const target = element(by.prevSiblingOf("#age")); // returns <li id="name">Thor</li>
+target.click(); //proceed with your desired operation
 ```
 
 #### find Following Sibling:
@@ -121,9 +157,16 @@ It will help you to omit the xpath's //following-sibling:: dependency
 You can find the following sibling by:
 
 ```ts
-const gp = element(by.cssContainingText("Name", "Thor")).element(
-  by.followingSibling("Age")
-); // returns <Age>Million Years</Age>
+const target = await element(by.css("#name")).nextSibling(); // returns <li id="age">Million Years</li>
+target.click(); //proceed with your desired operation
+```
+
+Or you can use as by-locator style,
+
+```ts
+const target = element(by.cssContainingText("#name", "Thor")).element(
+  by.followingSibling("#age")
+); // returns <li id="age">Million Years</li>
 ```
 
 #### find First Child:
@@ -133,7 +176,15 @@ The firstChildOf locator returns the first child element of the specified elemen
 You can find the first child by:
 
 ```ts
-const gp = element(by.firstChildOf("#schoolBook")); // returns <Name>Thor</Name>
+const target = await element(by.css("#schoolBook")).firstChild(); // returns <li id="name">Thor</li>
+target.click(); //proceed with your desired operation
+```
+
+Or you can use as by-locator style,
+
+```ts
+const target = element(by.firstChildOf("#schoolBook")); // returns <li id="name">Thor</li>
+target.click(); //proceed with your desired operation
 ```
 
 #### find Last Child:
@@ -143,8 +194,22 @@ The lastChildOf locator returns the last child element of the specified element.
 You can find the last child by:
 
 ```ts
-const gp = element(by.lastChildOf("#schoolBook")); // <Home>Asgard</Home>
+const target = await element(by.css("#schoolBook")).lastChild(); // returns <li id="home">Asgard</li>
+target.click(); //proceed with your desired operation
 ```
+
+Or you can use as by-locator style,
+
+```ts
+const target = element(by.lastChildOf("#schoolBook")); // returns <li id="home">Asgard</li>
+target.click(); //proceed with your desired operation
+```
+
+## Sample Test Files:
+
+> Using prototype function sample test cases can be found [here](./test/prototype-function.spec.js)
+
+> using as "by-locator" sample test cases can be found [here](./test/by-locator.spec.js)
 
 ## Tell me your issues
 
@@ -154,6 +219,6 @@ you can raise any issue [here](https://github.com/abhinaba1080/protractor-css-bo
 
 Any pull request is welcome keeping proper code structure.
 
-If works for you, dont forget to give a star. :star2: :star: :star: :star:
+If works for you, kindly give a star. :star2:
 
 _- Copyright &copy; 2019- [Abhinaba Ghosh](https://www.linkedin.com/in/abhinaba-ghosh-9a2ab8a0/)_
